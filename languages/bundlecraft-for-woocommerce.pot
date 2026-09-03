@@ -9,31 +9,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Domain: bundlecraft-for-woocommerce\n"
 
-#: includes/class-plugin.php:559
+#: includes/class-plugin.php:594
 msgid "%1$s off unlocked!"
 msgstr ""
 
-#: includes/class-plugin.php:459
+#: includes/class-plugin.php:476
 msgid "% Off"
 msgstr ""
 
-#: includes/class-plugin.php:473
+#: includes/class-plugin.php:546
+msgid "1 week"
+msgstr ""
+
+#: includes/class-plugin.php:545
+msgid "3 days"
+msgstr ""
+
+#: includes/class-plugin.php:543
+msgid "24 hours"
+msgstr ""
+
+#: includes/class-plugin.php:544
+msgid "48 hours"
+msgstr ""
+
+#: includes/class-plugin.php:490
 msgid "Accent"
 msgstr ""
 
-#: includes/class-plugin.php:407
+#: includes/class-plugin.php:408
 msgid "Add"
 msgstr ""
 
-#: includes/class-plugin.php:557
+#: includes/class-plugin.php:592
 msgid "Add %1$s more item(s) to unlock %2$s off"
 msgstr ""
 
-#: includes/class-plugin.php:444
+#: includes/class-plugin.php:461
 msgid "Add at least one discount tier."
 msgstr ""
 
-#: includes/class-plugin.php:443
+#: includes/class-plugin.php:460
 msgid "Add at least one product."
 msgstr ""
 
@@ -41,44 +57,56 @@ msgstr ""
 msgid "Add Bundle to Cart"
 msgstr ""
 
-#: includes/class-plugin.php:408
+#: includes/class-plugin.php:409
 msgid "Added"
 msgstr ""
 
-#: includes/class-plugin.php:551
+#: includes/class-plugin.php:586
 msgid "Added to cart!"
 msgstr ""
 
-#: includes/class-plugin.php:550
+#: includes/class-plugin.php:585
 msgid "Adding…"
 msgstr ""
 
-#: includes/class-plugin.php:460
+#: includes/class-plugin.php:477
 msgid "Add tier"
 msgstr ""
 
-#: includes/class-plugin.php:549
+#: includes/class-plugin.php:446 includes/class-plugin.php:584
 msgid "Add to Cart"
 msgstr ""
 
-#: includes/class-plugin.php:469
+#: includes/class-plugin.php:486
 msgid "After adding to cart"
+msgstr ""
+
+#: includes/class-plugin.php:437
+msgid "All bundles"
+msgstr ""
+
+#: includes/class-plugin.php:532
+msgid "All changes saved"
 msgstr ""
 
 #: includes/class-plugin.php:112
 msgid "Analytics"
 msgstr ""
 
-#: includes/class-plugin.php:442
+#: includes/class-plugin.php:459
 msgid "A name is required."
 msgstr ""
 
-#: includes/class-plugin.php:461
+#: includes/class-plugin.php:478
 msgid "Appearance & behavior"
 msgstr ""
 
-#: includes/class-plugin.php:482
+#: includes/class-plugin.php:499
 msgid "Apply"
+msgstr ""
+
+#: includes/class-plugin.php:442
+msgid "A rough sketch of the storefront widget — the real one inherits your theme styles."
 msgstr ""
 
 #: includes/class-bundles.php:95
@@ -101,19 +129,19 @@ msgstr ""
 msgid "BundleCraft for WooCommerce"
 msgstr ""
 
-#: includes/class-plugin.php:339
+#: includes/class-plugin.php:340
 msgid "BundleCraft requires JavaScript."
 msgstr ""
 
-#: includes/class-plugin.php:439
+#: includes/class-plugin.php:456
 msgid "Bundle deleted."
 msgstr ""
 
-#: includes/class-plugin.php:223
+#: includes/class-plugin.php:224
 msgid "Bundle Discount"
 msgstr ""
 
-#: includes/class-plugin.php:445
+#: includes/class-plugin.php:462
 msgid "Bundle name"
 msgstr ""
 
@@ -121,171 +149,211 @@ msgstr ""
 msgid "Bundle name is required."
 msgstr ""
 
-#: includes/class-shortcode.php:44 includes/class-rest.php:332 includes/class-rest.php:510 includes/class-rest.php:527 includes/class-rest.php:555
+#: includes/class-shortcode.php:44 includes/class-rest.php:347 includes/class-rest.php:527 includes/class-rest.php:544 includes/class-rest.php:572
 msgid "Bundle not found."
 msgstr ""
 
-#: includes/class-plugin.php:485
+#: includes/class-plugin.php:502
 msgid "Bundle Orders"
 msgstr ""
 
-#: includes/class-plugin.php:484
+#: includes/class-plugin.php:501
 msgid "Bundle Revenue"
 msgstr ""
 
-#: includes/class-plugin.php:493
+#: includes/class-plugin.php:510
 msgid "Bundle Revenue Over Time"
 msgstr ""
 
-#: includes/class-plugin.php:102 includes/class-plugin.php:103 includes/class-plugin.php:275
+#: includes/class-plugin.php:102 includes/class-plugin.php:103 includes/class-plugin.php:276
 msgid "Bundles"
 msgstr ""
 
-#: includes/class-plugin.php:440
+#: includes/class-plugin.php:457
 msgid "Bundle saved."
 msgstr ""
 
-#: includes/class-plugin.php:531
+#: includes/class-plugin.php:566
 msgid "Bundles stored"
 msgstr ""
 
-#: includes/class-plugin.php:527
+#: includes/class-plugin.php:562
 msgid "Bundles table exists"
 msgstr ""
 
-#: includes/class-plugin.php:468 includes/class-plugin.php:476
+#: includes/class-plugin.php:447
+msgid "Bundle updated."
+msgstr ""
+
+#: includes/class-plugin.php:485 includes/class-plugin.php:493
 msgid "Button text"
 msgstr ""
 
-#: includes/class-plugin.php:405
+#: includes/class-plugin.php:406
 msgid "Cancel"
 msgstr ""
 
-#: includes/class-rest.php:579
+#: includes/class-plugin.php:536
+msgid "Cart & discounts"
+msgstr ""
+
+#: includes/class-rest.php:596
 msgid "Cart is not available."
 msgstr ""
 
-#: includes/class-plugin.php:494
+#: includes/class-plugin.php:511
 msgid "Cart Share"
 msgstr ""
 
-#: includes/class-plugin.php:406
+#: includes/class-plugin.php:445
+msgid "Colors"
+msgstr ""
+
+#: includes/class-plugin.php:407
 msgid "Confirm"
 msgstr ""
 
-#: includes/class-plugin.php:435
+#: includes/class-plugin.php:452
 msgid "Copy shortcode"
 msgstr ""
 
-#: includes/class-plugin.php:562
+#: includes/class-plugin.php:597
 msgid "Could not add the bundle to your cart."
 msgstr ""
 
-#: includes/class-plugin.php:416
+#: includes/class-plugin.php:417
 msgid "Could not load data."
 msgstr ""
 
-#: includes/class-plugin.php:483
+#: includes/class-plugin.php:539
+msgid "Coupon lifetime"
+msgstr ""
+
+#: includes/class-plugin.php:500
 msgid "Coupons Created"
 msgstr ""
 
-#: includes/class-plugin.php:492
+#: includes/class-plugin.php:509
 msgid "Coupon Usage"
 msgstr ""
 
-#: includes/class-plugin.php:486
+#: includes/class-plugin.php:503
 msgid "Coupon Usage Rate"
+msgstr ""
+
+#: includes/class-plugin.php:436
+msgid "Create your first bundle: pick products, set quantity tiers, and publish it with a shortcode."
 msgstr ""
 
 #: includes/class-analytics.php:116
 msgid "Custom: %1$s to %2$s"
 msgstr ""
 
-#: includes/class-plugin.php:506 includes/class-analytics.php:121
+#: includes/class-plugin.php:523 includes/class-analytics.php:121
 msgid "Custom Range"
 msgstr ""
 
-#: includes/class-plugin.php:522
+#: includes/class-plugin.php:557
 msgid "Database Schema Version"
 msgstr ""
 
-#: includes/class-plugin.php:424
+#: includes/class-plugin.php:425
 msgid "Date"
 msgstr ""
 
-#: includes/class-plugin.php:479
+#: includes/class-plugin.php:496
 msgid "Date range"
 msgstr ""
 
-#: includes/class-plugin.php:530
+#: includes/class-plugin.php:541
+msgid "Debug logging"
+msgstr ""
+
+#: includes/class-plugin.php:565
 msgid "Debug logging enabled"
 msgstr ""
 
-#: includes/class-plugin.php:410
+#: includes/class-plugin.php:537
+msgid "Default cart behavior"
+msgstr ""
+
+#: includes/class-plugin.php:411
 msgid "Delete"
 msgstr ""
 
-#: includes/class-plugin.php:437
+#: includes/class-plugin.php:454
 msgid "Delete bundle?"
 msgstr ""
 
-#: includes/class-plugin.php:438
+#: includes/class-plugin.php:455
 msgid "Delete this bundle? This cannot be undone."
 msgstr ""
 
-#: includes/class-plugin.php:446
+#: includes/class-plugin.php:463
 msgid "Description"
+msgstr ""
+
+#: includes/class-plugin.php:440
+msgid "Design"
 msgstr ""
 
 #: includes/class-plugin.php:129 includes/class-plugin.php:130
 msgid "Diagnostics"
 msgstr ""
 
-#: includes/class-plugin.php:422
+#: includes/class-plugin.php:423
 msgid "Disabled"
 msgstr ""
 
-#: includes/class-plugin.php:426 includes/class-plugin.php:547
+#: includes/class-plugin.php:427 includes/class-plugin.php:582
 msgid "Discount"
 msgstr ""
 
-#: includes/class-plugin.php:454
+#: includes/class-plugin.php:471
 msgid "Discount rules"
 msgstr ""
 
-#: includes/class-plugin.php:409
+#: includes/class-plugin.php:439
+msgid "Discounts"
+msgstr ""
+
+#: includes/class-plugin.php:410
 msgid "Edit"
 msgstr ""
 
-#: includes/class-plugin.php:431
+#: includes/class-plugin.php:449
 msgid "Edit Bundle"
 msgstr ""
 
-#: includes/class-plugin.php:421
+#: includes/class-plugin.php:422
 msgid "Enabled"
 msgstr ""
 
-#: includes/class-plugin.php:512
+#: includes/class-plugin.php:433
+msgid "enabled"
+msgstr ""
+
+#: includes/class-plugin.php:529
 msgid "Enable debug logging"
 msgstr ""
 
-#: includes/class-plugin.php:481
+#: includes/class-plugin.php:498
 msgid "End date"
 msgstr ""
 
-#: includes/class-plugin.php:516
+#: includes/class-plugin.php:551
 msgid "Environment"
 msgstr ""
 
-#: includes/class-rest.php:641
+#: includes/class-rest.php:658
 msgid "Failed to add any products to the cart."
 msgstr ""
 
-#: includes/class-rest.php:632
+#: includes/class-rest.php:649
 msgid "Failed to add product #%d to the cart."
 msgstr ""
 
-#: includes/class-rest.php:348
+#: includes/class-rest.php:363
 msgid "Failed to delete bundle."
 msgstr ""
 
@@ -297,167 +365,195 @@ msgstr ""
 msgid "Failed to save bundle: %s"
 msgstr ""
 
-#: includes/class-plugin.php:462
+#: includes/class-plugin.php:535
+msgid "General"
+msgstr ""
+
+#: includes/class-plugin.php:431
+msgid "Group products into promotions with tiered quantity discounts, then drop them anywhere with a shortcode."
+msgstr ""
+
+#: includes/class-plugin.php:479
 msgid "Heading text"
 msgstr ""
 
-#: includes/class-plugin.php:517
+#: includes/class-plugin.php:552
 msgid "Health Checks"
 msgstr ""
 
-#: includes/class-plugin.php:464
+#: includes/class-plugin.php:481
 msgid "Hint text"
 msgstr ""
 
-#: includes/class-plugin.php:475
+#: includes/class-plugin.php:492
 msgid "Hover accent"
 msgstr ""
 
-#: includes/class-plugin.php:474
+#: includes/class-plugin.php:491
 msgid "Hover background"
+msgstr ""
+
+#: includes/class-plugin.php:540
+msgid "How long a bundle discount coupon stays valid before it is automatically cleaned up. Longer windows leave more unused coupons behind."
 msgstr ""
 
 #: bundlecraft-for-woocommerce.php:117
 msgid "Install WooCommerce"
 msgstr ""
 
-#: includes/class-plugin.php:545
+#: includes/class-plugin.php:580
 msgid "item"
 msgstr ""
 
-#: includes/class-plugin.php:458
+#: includes/class-plugin.php:475
 msgid "Items"
 msgstr ""
 
-#: includes/class-plugin.php:544
+#: includes/class-plugin.php:579
 msgid "items"
 msgstr ""
 
-#: includes/class-plugin.php:499 includes/class-analytics.php:100
+#: includes/class-plugin.php:443
+msgid "items +"
+msgstr ""
+
+#: includes/class-plugin.php:516 includes/class-analytics.php:100
 msgid "Last 7 Days"
 msgstr ""
 
-#: includes/class-plugin.php:500 includes/class-analytics.php:102
+#: includes/class-plugin.php:517 includes/class-analytics.php:102
 msgid "Last 30 Days"
 msgstr ""
 
-#: includes/class-plugin.php:501 includes/class-analytics.php:104
+#: includes/class-plugin.php:518 includes/class-analytics.php:104
 msgid "Last 90 Days"
 msgstr ""
 
-#: includes/class-plugin.php:503 includes/class-analytics.php:108
+#: includes/class-plugin.php:520 includes/class-analytics.php:108
 msgid "Last Month"
 msgstr ""
 
-#: includes/class-plugin.php:533
+#: includes/class-plugin.php:568
 msgid "Legacy "mmb" table still present"
 msgstr ""
 
-#: includes/class-plugin.php:532
+#: includes/class-plugin.php:567
 msgid "Legacy data migrated"
 msgstr ""
 
-#: includes/class-plugin.php:336
+#: includes/class-plugin.php:441
+msgid "Live preview"
+msgstr ""
+
+#: includes/class-plugin.php:337
 msgid "Loading BundleCraft…"
 msgstr ""
 
-#: includes/class-plugin.php:412
+#: includes/class-plugin.php:413
 msgid "Loading…"
 msgstr ""
 
-#: includes/class-plugin.php:561
+#: includes/class-plugin.php:596
 msgid "Maximum of %d items per bundle reached."
 msgstr ""
 
-#: includes/class-plugin.php:456
+#: includes/class-plugin.php:473
 msgid "Maximum quantity per product"
 msgstr ""
 
-#: includes/class-plugin.php:523
+#: includes/class-plugin.php:558
 msgid "Memory Limit"
 msgstr ""
 
-#: includes/class-plugin.php:430
+#: includes/class-plugin.php:448
 msgid "New Bundle"
 msgstr ""
 
-#: includes/class-plugin.php:420
+#: includes/class-plugin.php:421
 msgid "No"
 msgstr ""
 
-#: includes/class-plugin.php:497
+#: includes/class-plugin.php:514
 msgid "No bundle orders in this period yet."
 msgstr ""
 
-#: includes/class-plugin.php:432
-msgid "No bundles yet. Create your first one!"
-msgstr ""
-
-#: includes/class-plugin.php:453
-msgid "No products selected yet."
-msgstr ""
-
-#: includes/class-rest.php:568
-msgid "No purchasable products selected."
-msgstr ""
-
-#: includes/class-rest.php:533 includes/class-rest.php:561
-msgid "No valid products selected."
-msgstr ""
-
-#: includes/class-plugin.php:417
-msgid "OK"
+#: includes/class-plugin.php:435
+msgid "No bundles yet"
 msgstr ""
 
 #: includes/class-plugin.php:470
+msgid "No products selected yet."
+msgstr ""
+
+#: includes/class-rest.php:585
+msgid "No purchasable products selected."
+msgstr ""
+
+#: includes/class-rest.php:550 includes/class-rest.php:578
+msgid "No valid products selected."
+msgstr ""
+
+#: includes/class-plugin.php:444
+msgid "off"
+msgstr ""
+
+#: includes/class-plugin.php:418
+msgid "OK"
+msgstr ""
+
+#: includes/class-plugin.php:487 includes/class-plugin.php:547
 msgid "Open cart / sidecart"
 msgstr ""
 
-#: includes/class-plugin.php:498
+#: includes/class-plugin.php:515
 msgid "Order"
 msgstr ""
 
-#: includes/class-plugin.php:564
+#: includes/class-plugin.php:599
 msgid "Out of stock"
 msgstr ""
 
-#: includes/class-plugin.php:520
+#: includes/class-plugin.php:555
 msgid "PHP Version"
 msgstr ""
 
-#: includes/class-plugin.php:521
+#: includes/class-plugin.php:556
 msgid "Plugin Version"
 msgstr ""
 
-#: includes/class-plugin.php:472
+#: includes/class-plugin.php:538
+msgid "Preselected for every new bundle you create. You can still change it per bundle in the editor."
+msgstr ""
+
+#: includes/class-plugin.php:489
 msgid "Primary"
 msgstr ""
 
-#: includes/class-rest.php:599
+#: includes/class-rest.php:616
 msgid "Product cannot be purchased: #%d"
 msgstr ""
 
-#: includes/class-plugin.php:433
-msgid "products"
-msgstr ""
-
-#: includes/class-plugin.php:449
+#: includes/class-plugin.php:438 includes/class-plugin.php:466
 msgid "Products"
 msgstr ""
 
-#: includes/class-plugin.php:466
+#: includes/class-plugin.php:450
+msgid "products"
+msgstr ""
+
+#: includes/class-plugin.php:483
 msgid "Progress section text"
 msgstr ""
 
-#: includes/class-plugin.php:496
+#: includes/class-plugin.php:513
 msgid "Recent Bundle Orders"
 msgstr ""
 
-#: includes/class-plugin.php:471
+#: includes/class-plugin.php:488 includes/class-plugin.php:548
 msgid "Redirect to cart"
 msgstr ""
 
-#: includes/class-plugin.php:411
+#: includes/class-plugin.php:412
 msgid "Remove"
 msgstr ""
 
@@ -465,43 +561,43 @@ msgstr ""
 msgid "requires WooCommerce to be installed and active."
 msgstr ""
 
-#: includes/class-plugin.php:526
+#: includes/class-plugin.php:561
 msgid "REST Endpoint"
 msgstr ""
 
-#: includes/class-plugin.php:441
+#: includes/class-plugin.php:458
 msgid "Save Bundle"
 msgstr ""
 
-#: includes/class-plugin.php:510
+#: includes/class-plugin.php:527
 msgid "Save Settings"
 msgstr ""
 
-#: includes/class-plugin.php:413
+#: includes/class-plugin.php:414 includes/class-plugin.php:533
 msgid "Saving…"
 msgstr ""
 
-#: includes/class-plugin.php:414
+#: includes/class-plugin.php:415
 msgid "Searching…"
 msgstr ""
 
-#: includes/class-plugin.php:450
+#: includes/class-plugin.php:467
 msgid "Search products"
 msgstr ""
 
-#: includes/class-plugin.php:452
+#: includes/class-plugin.php:469
 msgid "Selected products (drag to reorder)"
 msgstr ""
 
-#: includes/class-plugin.php:555
+#: includes/class-plugin.php:590
 msgid "Select products to see your bundle pricing."
 msgstr ""
 
-#: includes/class-plugin.php:553
+#: includes/class-plugin.php:588
 msgid "Select this product"
 msgstr ""
 
-#: includes/class-plugin.php:552
+#: includes/class-plugin.php:587
 msgid "Select variation"
 msgstr ""
 
@@ -509,59 +605,59 @@ msgstr ""
 msgid "Select Your Products Below"
 msgstr ""
 
-#: includes/class-plugin.php:120 includes/class-plugin.php:121 includes/class-plugin.php:280 includes/class-plugin.php:509
+#: includes/class-plugin.php:120 includes/class-plugin.php:121 includes/class-plugin.php:281 includes/class-plugin.php:526
 msgid "Settings"
 msgstr ""
 
-#: includes/class-plugin.php:511
+#: includes/class-plugin.php:528
 msgid "Settings saved."
 msgstr ""
 
-#: includes/class-plugin.php:436
+#: includes/class-plugin.php:453
 msgid "Shortcode copied!"
 msgstr ""
 
-#: includes/class-plugin.php:463
+#: includes/class-plugin.php:480
 msgid "Show heading"
 msgstr ""
 
-#: includes/class-plugin.php:465
+#: includes/class-plugin.php:482
 msgid "Show hint"
 msgstr ""
 
-#: includes/class-plugin.php:447
+#: includes/class-plugin.php:464
 msgid "Show on storefront"
 msgstr ""
 
-#: includes/class-plugin.php:467
+#: includes/class-plugin.php:484
 msgid "Show progress"
 msgstr ""
 
-#: includes/class-plugin.php:448
+#: includes/class-plugin.php:465
 msgid "Show title"
 msgstr ""
 
-#: includes/class-plugin.php:415
+#: includes/class-plugin.php:416
 msgid "Something went wrong. Please try again."
 msgstr ""
 
-#: includes/class-plugin.php:480
+#: includes/class-plugin.php:497
 msgid "Start date"
 msgstr ""
 
-#: includes/class-plugin.php:423
+#: includes/class-plugin.php:424
 msgid "Status"
 msgstr ""
 
-#: includes/class-plugin.php:525
+#: includes/class-plugin.php:560
 msgid "Store URL"
 msgstr ""
 
-#: includes/class-plugin.php:546
+#: includes/class-plugin.php:581
 msgid "Subtotal"
 msgstr ""
 
-#: includes/class-plugin.php:554
+#: includes/class-plugin.php:589
 msgid "Summary"
 msgstr ""
 
@@ -569,43 +665,51 @@ msgstr ""
 msgid "This bundle builder requires JavaScript."
 msgstr ""
 
-#: includes/class-plugin.php:502 includes/class-analytics.php:106
+#: includes/class-plugin.php:519 includes/class-analytics.php:106
 msgid "This Month"
 msgstr ""
 
-#: includes/class-plugin.php:504 includes/class-analytics.php:110
+#: includes/class-plugin.php:521 includes/class-analytics.php:110
 msgid "This Quarter"
 msgstr ""
 
-#: includes/class-plugin.php:505 includes/class-analytics.php:112
+#: includes/class-plugin.php:522 includes/class-analytics.php:112
 msgid "This Year"
 msgstr ""
 
-#: includes/class-plugin.php:434
+#: includes/class-plugin.php:451
 msgid "tiers"
 msgstr ""
 
-#: includes/class-plugin.php:457
+#: includes/class-plugin.php:474
 msgid "Tiers: buy at least this many items, unlock this percentage off. Items count total units in the bundle."
 msgstr ""
 
-#: includes/class-plugin.php:489
+#: includes/class-plugin.php:506
 msgid "Times used"
 msgstr ""
 
-#: includes/class-plugin.php:524
+#: includes/class-plugin.php:559
 msgid "Timezone"
 msgstr ""
 
-#: includes/class-plugin.php:495
+#: includes/class-plugin.php:512
 msgid "Top Bundles"
 msgstr ""
 
-#: includes/class-plugin.php:425 includes/class-plugin.php:548
+#: includes/class-plugin.php:426 includes/class-plugin.php:583
 msgid "Total"
 msgstr ""
 
-#: includes/class-plugin.php:451
+#: includes/class-plugin.php:432
+msgid "total"
+msgstr ""
+
+#: includes/class-plugin.php:531
+msgid "Tune how BundleCraft behaves on your store. Changes save instantly."
+msgstr ""
+
+#: includes/class-plugin.php:468
 msgid "Type at least 2 characters…"
 msgstr ""
 
@@ -613,63 +717,75 @@ msgstr ""
 msgid "Unnamed Bundle"
 msgstr ""
 
-#: includes/class-plugin.php:488
+#: includes/class-plugin.php:534
+msgid "Unsaved changes"
+msgstr ""
+
+#: includes/class-plugin.php:434
+msgid "Untitled"
+msgstr ""
+
+#: includes/class-plugin.php:505
 msgid "Unused"
 msgstr ""
 
-#: includes/class-plugin.php:487
+#: includes/class-plugin.php:504
 msgid "Used"
 msgstr ""
 
-#: includes/class-plugin.php:455
+#: includes/class-plugin.php:472
 msgid "Use quantity mode (steppers instead of checkboxes)"
 msgstr ""
 
-#: includes/class-plugin.php:563
+#: includes/class-plugin.php:598
 msgid "View Cart"
 msgstr ""
 
-#: includes/class-plugin.php:418
+#: includes/class-plugin.php:419
 msgid "Warning"
 msgstr ""
 
-#: includes/class-plugin.php:513
+#: includes/class-plugin.php:530
 msgid "When enabled, BundleCraft writes diagnostic messages to the WooCommerce log (WooCommerce → Status → Logs, source "bundlecraft-for-woocommerce"). Leave this off on production stores unless support asks you to enable it."
 msgstr ""
 
-#: includes/class-plugin.php:490
+#: includes/class-plugin.php:507
 msgid "With Bundle"
 msgstr ""
 
-#: includes/class-plugin.php:491
+#: includes/class-plugin.php:508
 msgid "Without Bundle"
 msgstr ""
 
-#: includes/class-rest.php:549
+#: includes/class-rest.php:566
 msgid "WooCommerce is not available."
 msgstr ""
 
-#: includes/class-plugin.php:529
+#: includes/class-plugin.php:564
 msgid "WooCommerce loaded"
 msgstr ""
 
-#: includes/class-plugin.php:528
+#: includes/class-plugin.php:563
 msgid "WooCommerce sessions table exists"
 msgstr ""
 
-#: includes/class-plugin.php:519
+#: includes/class-plugin.php:554
 msgid "WooCommerce Version"
 msgstr ""
 
-#: includes/class-plugin.php:518
+#: includes/class-plugin.php:553
 msgid "WordPress Version"
 msgstr ""
 
-#: includes/class-plugin.php:419
+#: includes/class-plugin.php:542
+msgid "Write diagnostic messages to the WooCommerce log while troubleshooting."
+msgstr ""
+
+#: includes/class-plugin.php:420
 msgid "Yes"
 msgstr ""
 
-#: includes/class-plugin.php:429
+#: includes/class-plugin.php:430
 msgid "Your Bundles"
 msgstr ""
 
