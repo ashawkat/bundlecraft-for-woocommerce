@@ -21,6 +21,18 @@ Build product bundle promotions with tiered quantity discounts, a modern Vue-pow
 
 > **Roadmap:** first-class widgets for Elementor, Bricks, and other page builders are coming soon.
 
+## Screenshots
+
+| | |
+|---|---|
+| ![Bundle editor with live preview](.wordpress-org/screenshot-1.png) | ![Tiered discount builder](.wordpress-org/screenshot-2.png) |
+| ![Analytics dashboard](.wordpress-org/screenshot-3.png) | ![Storefront bundle widget](.wordpress-org/screenshot-4.png) |
+
+1. Bundle editor with product picker, drag-and-drop ordering, and a live preview of the storefront widget.
+2. Tiered discount builder.
+3. Analytics dashboard with date-range filtering.
+4. Storefront bundle widget with tier progress and live totals.
+
 ## Repository layout
 
 ```

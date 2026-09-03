@@ -133,7 +133,7 @@ watch(
 		clearTimeout( quoteTimer );
 		quoteTimer = setTimeout( refreshQuote, 250 );
 	},
-	{ deep: true }
+	{ immediate: true, deep: true }
 );
 
 async function refreshQuote() {

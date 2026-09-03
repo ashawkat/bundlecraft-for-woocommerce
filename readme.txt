@@ -76,10 +76,10 @@ Yes. On activation, BundleCraft migrates bundles and settings from the legacy ta
 
 == Screenshots ==
 
-1. Bundle editor with live preview.
-2. Discount tier rules.
-3. Analytics dashboard.
-4. Storefront bundle widget with progress bar.
+1. Bundle editor with product picker, drag-and-drop ordering, and a live preview of the storefront widget.
+2. Tiered discount builder: set quantity thresholds and percentage discounts.
+3. Analytics dashboard: coupons, revenue, orders, cart share, and top bundles with date-range filtering.
+4. Storefront bundle widget: quantity steppers, unlocked tiers, and a live summary with the discount applied.
 
 == Changelog ==
 
