@@ -52,10 +52,10 @@ function defaultForm() {
 		hint_text: 'Bundle 2, 3, 4 or 5 items and watch the savings grow.',
 		button_text: 'Add Bundle to Cart',
 		progress_text: 'Your Savings Progress',
-		primary_color: '#4caf50',
-		accent_color: '#45a049',
-		hover_bg_color: '#388e3c',
-		hover_accent_color: '#2e7d32',
+		primary_color: '#6366f1',
+		accent_color: '#4f46e5',
+		hover_bg_color: '#eef2ff',
+		hover_accent_color: '#4338ca',
 		button_text_color: '#ffffff',
 		cart_behavior: config.settings?.default_cart_behavior || 'sidecart',
 		show_bundle_title: true,
@@ -605,8 +605,8 @@ onMounted( loadBundles );
 									v-for="[key, labelKey, fallback] in [
 										[ 'primary_color', 'primaryColor', 'Primary' ],
 										[ 'accent_color', 'accentColor', 'Accent' ],
-										[ 'hover_bg_color', 'hoverBgColor', 'Hover background' ],
-										[ 'hover_accent_color', 'hoverAccentColor', 'Hover accent' ],
+										[ 'hover_bg_color', 'hoverBgColor', 'Card tint' ],
+										[ 'hover_accent_color', 'hoverAccentColor', 'Button hover' ],
 										[ 'button_text_color', 'buttonTextColor', 'Button text' ],
 									]"
 									:key="key"

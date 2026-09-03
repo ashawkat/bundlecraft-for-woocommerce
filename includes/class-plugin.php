@@ -488,8 +488,8 @@ class Plugin {
 			'redirectToCart'    => __( 'Redirect to cart', 'bundlecraft-for-woocommerce' ),
 			'primaryColor'      => __( 'Primary', 'bundlecraft-for-woocommerce' ),
 			'accentColor'       => __( 'Accent', 'bundlecraft-for-woocommerce' ),
-			'hoverBgColor'      => __( 'Hover background', 'bundlecraft-for-woocommerce' ),
-			'hoverAccentColor'  => __( 'Hover accent', 'bundlecraft-for-woocommerce' ),
+			'hoverBgColor'      => __( 'Card tint', 'bundlecraft-for-woocommerce' ),
+			'hoverAccentColor'  => __( 'Button hover', 'bundlecraft-for-woocommerce' ),
 			'buttonTextColor'   => __( 'Button text', 'bundlecraft-for-woocommerce' ),
 
 			// Analytics view.

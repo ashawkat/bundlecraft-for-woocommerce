@@ -271,10 +271,21 @@ function summaryLine( product ) {
 	const state = selection[ product.id ];
 	const variation = variationOf( product );
 	const name = variation
-		? `${ product.name } — ${ Object.values( variation.attributes || {} ).join( ', ' ) || variation.id }`
+		? `${ product.name } — ${ variationLabel( variation ) }`
 		: product.name;
 
 	return { name, qty: state ? state.qty : 0 };
+}
+
+/**
+ * Human-friendly variation label: capitalized attribute values, skipping
+ * empty or meaningless flags.
+ */
+function variationLabel( variation ) {
+	return ( variation.attributes ? Object.values( variation.attributes ) : [] )
+		.filter( ( value ) => value !== '' && value !== '0' )
+		.map( ( value ) => String( value ).charAt( 0 ).toUpperCase() + String( value ).slice( 1 ) )
+		.join( ' · ' );
 }
 </script>
 
@@ -311,6 +322,8 @@ function summaryLine( product ) {
 						:key="product.id"
 						:class="['bcw-card', { 'bcw-card--active': isChecked( product ) }]"
 					>
+						<span v-if="isChecked( product )" class="bcw-card__check" aria-hidden="true">✓</span>
+
 						<a v-if="product.permalink" :href="product.permalink" class="bcw-card__image">
 							<img :src="product.image" :alt="product.name" loading="lazy" />
 						</a>
@@ -335,7 +348,7 @@ function summaryLine( product ) {
 								@change="onVariationChange( product )"
 							>
 								<option v-for="variation in product.variations" :key="variation.id" :value="variation.id">
-									{{ Object.values( variation.attributes || {} ).join( ', ' ) || ( '#' + variation.id ) }}
+									{{ variationLabel( variation ) || ( '#' + variation.id ) }}
 									{{ variation.in_stock ? '' : ` (${ t( 'outOfStock', 'Out of stock' ) })` }}
 								</option>
 							</select>
