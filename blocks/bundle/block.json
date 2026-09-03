@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "bundlecraft/bundle",
+	"title": "BundleCraft Bundle",
+	"category": "woocommerce",
+	"description": "Display a BundleCraft bundle builder widget with tiered quantity discounts.",
+	"keywords": [ "bundle", "bundlecraft", "woocommerce", "discount" ],
+	"textdomain": "bundlecraft-for-woocommerce",
+	"attributes": {
+		"bundleId": {
+			"type": "integer",
+			"default": 0
+		}
+	},
+	"supports": {
+		"html": false,
+		"customClassName": false,
+		"multiple": true
+	},
+	"editorScript": "bundlecraft-block-editor",
+	"editorStyle": "bundlecraft-frontend"
+}

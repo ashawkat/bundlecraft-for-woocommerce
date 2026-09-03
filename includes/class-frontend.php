@@ -26,12 +26,19 @@ class Frontend {
 	private static $assets_forced = false;
 
 	/**
-	 * Marks frontend assets as required on this request.
+	 * Marks frontend assets as required on this request and triggers a
+	 * late enqueue for renders that happen after wp_enqueue_scripts.
 	 *
 	 * @return void
 	 */
 	public static function force_assets() {
 		self::$assets_forced = true;
+
+		/**
+		 * Fires when a bundle widget has just been rendered, so the plugin
+		 * can enqueue its assets even outside the standard detection.
+		 */
+		do_action( 'bundlecraft_force_frontend_assets' );
 	}
 
 	/**
@@ -57,6 +64,32 @@ class Frontend {
 
 		ob_start();
 		include BUNDLECRAFT_PLUGIN_DIR . 'templates/bundle-display.php';
+		return ob_get_clean();
+	}
+
+	/**
+	 * Compact, non-interactive preview used inside the block editor, where
+	 * the storefront Vue app is not available.
+	 *
+	 * @param array $bundle Formatted bundle.
+	 * @return string
+	 */
+	public static function render_editor_preview( array $bundle ) {
+		$products = [];
+
+		foreach ( array_slice( $bundle['product_ids'], 0, 6 ) as $product_id ) {
+			$product = wc_get_product( $product_id );
+
+			if ( $product ) {
+				$products[] = [
+					'name'  => $product->get_name(),
+					'image' => wp_get_attachment_image_url( $product->get_image_id(), 'woocommerce_thumbnail' ),
+				];
+			}
+		}
+
+		ob_start();
+		include BUNDLECRAFT_PLUGIN_DIR . 'templates/editor-preview.php';
 		return ob_get_clean();
 	}
 

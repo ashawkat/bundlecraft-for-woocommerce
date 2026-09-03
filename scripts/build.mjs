@@ -56,6 +56,37 @@ await build( {
 	},
 } );
 
+// The block editor entry uses WordPress's own bundled libraries: they are
+// marked external and resolved from the wp.* globals at runtime, so the
+// editor shares the block editor's single React instance.
+const wpGlobals = {
+	'@wordpress/blocks': 'wp.blocks',
+	'@wordpress/element': 'wp.element',
+	'@wordpress/components': 'wp.components',
+	'@wordpress/i18n': 'wp.i18n',
+	'@wordpress/block-editor': 'wp.blockEditor',
+	'@wordpress/api-fetch': 'wp.apiFetch',
+	'@wordpress/server-side-render': 'wp.serverSideRender',
+	'@wordpress/data': 'wp.data',
+};
+
+await build( {
+	...shared,
+	root,
+	build: {
+		...shared.build,
+		rollupOptions: {
+			...shared.build.rollupOptions,
+			input: { 'block-editor': resolve( root, 'src/blocks/editor.js' ) },
+			external: [ ( id ) => id.startsWith( '@wordpress/' ) ],
+			output: {
+				...shared.build.rollupOptions.output,
+				globals: wpGlobals,
+			},
+		},
+	},
+} );
+
 // Ship the stylesheets as standalone files for wp_enqueue_style().
 copyFileSync( resolve( root, 'src/admin/styles/admin.css' ), resolve( root, 'assets/build/admin.css' ) );
 copyFileSync( resolve( root, 'src/frontend/styles/frontend.css' ), resolve( root, 'assets/build/frontend.css' ) );

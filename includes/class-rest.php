@@ -94,6 +94,20 @@ class Rest {
 			]
 		);
 
+		// ---- Lightweight list for the Gutenberg block picker ------------.
+
+		register_rest_route(
+			self::NAMESPACE_V1,
+			'/bundles-list',
+			[
+				[
+					'methods'             => \WP_REST_Server::READABLE,
+					'callback'            => [ $this, 'get_bundles_list' ],
+					'permission_callback' => [ $this, 'can_edit_posts' ],
+				],
+			]
+		);
+
 		// ---- Admin: product search ----------------------------------.
 
 		register_rest_route(
@@ -296,6 +310,36 @@ class Rest {
 	 */
 	public function can_manage() {
 		return current_user_can( 'manage_options' );
+	}
+
+	/**
+	 * The block picker only needs to list bundle names, so any user who
+	 * can edit content may read it.
+	 *
+	 * @return bool
+	 */
+	public function can_edit_posts() {
+		return current_user_can( 'edit_posts' );
+	}
+
+	/**
+	 * Minimal id/name list used by the Gutenberg block picker.
+	 *
+	 * @return \WP_REST_Response
+	 */
+	public function get_bundles_list() {
+		$list = array_map(
+			static function ( $bundle ) {
+				return [
+					'id'      => $bundle['id'],
+					'name'    => $bundle['name'],
+					'enabled' => (bool) $bundle['enabled'],
+				];
+			},
+			Bundles::all()
+		);
+
+		return rest_ensure_response( $list );
 	}
 
 	// ------------------------------------------------------------------

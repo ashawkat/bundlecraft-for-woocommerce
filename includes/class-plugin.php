@@ -25,6 +25,13 @@ class Plugin {
 	private static $instance = null;
 
 	/**
+	 * Whether the frontend widget assets have been enqueued this request.
+	 *
+	 * @var bool
+	 */
+	private $frontend_assets_enqueued = false;
+
+	/**
 	 * Slug of the top-level admin page.
 	 */
 	const MENU_SLUG = 'bundlecraft';
@@ -48,8 +55,7 @@ class Plugin {
 	 * @return void
 	 */
 	public function boot() {
-		add_action( 'init', [ Install::class, 'maybe_upgrade' ] );
-		add_action( 'init', [ $this, 'register_shortcode' ], 5 );
+		add_action( 'init', [ $this, 'init_extensions' ], 1 );
 
 		Cart::instance();
 
@@ -57,7 +63,19 @@ class Plugin {
 		add_action( 'admin_menu', [ $this, 'register_admin_menu' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_frontend_assets' ] );
+		add_action( 'bundlecraft_force_frontend_assets', [ $this, 'enqueue_frontend_assets_now' ] );
 		add_filter( 'plugin_action_links_' . BUNDLECRAFT_PLUGIN_BASENAME, [ $this, 'plugin_action_links' ] );
+	}
+
+	/**
+	 * Runs first thing on init: schema upgrades, shortcode, and block
+	 * registration, so their own init hooks land at safe priorities.
+	 *
+	 * @return void
+	 */
+	public function init_extensions() {
+		Install::maybe_upgrade();
+		$this->register_shortcode();
 	}
 
 	/**
@@ -68,6 +86,9 @@ class Plugin {
 	public function register_shortcode() {
 		$shortcode = new Shortcode();
 		$shortcode->register_hooks();
+
+		$block = new Block();
+		$block->register_hooks();
 	}
 
 	/**
@@ -192,11 +213,36 @@ class Plugin {
 	}
 
 	/**
+	 * Late enqueue for widgets rendered outside the standard detection
+	 * window (blocks in widgets, filters that render late). Footer
+	 * scripts still print after this point.
+	 *
+	 * @return void
+	 */
+	public function enqueue_frontend_assets_now() {
+		if ( is_admin() || $this->frontend_assets_enqueued ) {
+			return;
+		}
+
+		if ( wp_script_is( 'bundlecraft-frontend', 'done' ) ) {
+			return;
+		}
+
+		$this->localize_frontend_assets();
+	}
+
+	/**
 	 * Registers, localizes, and prints the frontend widget assets.
 	 *
 	 * @return void
 	 */
 	private function localize_frontend_assets() {
+		if ( $this->frontend_assets_enqueued ) {
+			return;
+		}
+
+		$this->frontend_assets_enqueued = true;
+
 		$css_version = $this->asset_version( 'assets/build/frontend.css' );
 		$js_version  = $this->asset_version( 'assets/build/frontend.js' );
 
@@ -240,15 +286,24 @@ class Plugin {
 	 */
 	private function should_enqueue_frontend_assets() {
 		if ( Frontend::assets_forced() ) {
-			$should_load = true;
-		} elseif ( is_singular() ) {
-			$should_load = is_a( get_post(), 'WP_Post' ) && has_shortcode( get_post()->post_content, 'bundlecraft_bundle' );
-		} else {
-			$should_load = false;
+			return true;
+		}
 
+		$has_bundle = false;
+
+		if ( is_singular() ) {
+			$post = get_post();
+
+			if ( is_a( $post, 'WP_Post' ) ) {
+				$has_bundle = has_shortcode( $post->post_content, 'bundlecraft_bundle' )
+					|| has_block( 'bundlecraft/bundle', $post );
+			}
+		} else {
 			foreach ( $GLOBALS['posts'] ?? [] as $post ) {
-				if ( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'bundlecraft_bundle' ) ) {
-					$should_load = true;
+				if ( is_a( $post, 'WP_Post' )
+					&& ( has_shortcode( $post->post_content, 'bundlecraft_bundle' )
+						|| has_block( 'bundlecraft/bundle', $post ) ) ) {
+					$has_bundle = true;
 					break;
 				}
 			}
@@ -259,7 +314,7 @@ class Plugin {
 		 *
 		 * @param bool $should_load
 		 */
-		return apply_filters( 'bundlecraft_should_enqueue_frontend_assets', $should_load );
+		return apply_filters( 'bundlecraft_should_enqueue_frontend_assets', $has_bundle );
 	}
 
 	/**
