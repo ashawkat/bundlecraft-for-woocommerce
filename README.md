@@ -2,6 +2,8 @@
 
 ![BundleCraft for WooCommerce](.wordpress-org/banner-1544x500.png)
 
+**[⬇ Download the latest release](../../releases/latest)** — install via **Plugins → Add New → Upload Plugin**.
+
 Build product bundle promotions with tiered quantity discounts, a modern Vue-powered admin, analytics, and a customer-facing bundle builder widget.
 
 - **Contributors:** ashawkat
