@@ -33,6 +33,52 @@ Build product bundle promotions with tiered quantity discounts, a modern Vue-pow
 3. Analytics dashboard with date-range filtering.
 4. Storefront bundle widget with tier progress and live totals.
 
+## Database
+
+The plugin creates **one custom table** on activation — `{$wpdb->prefix}bundlecraft_bundles` (e.g. `wp_bundlecraft_bundles`) — and stores everything else in standard WordPress/WooCommerce tables and options. Schema changes are version-tracked through the `bundlecraft_db_version` option and applied with `dbDelta()`.
+
+### `bundlecraft_bundles`
+
+| Column | Type | Purpose |
+|---|---|---|
+| `id` | mediumint(9), PK, auto-increment | Bundle ID (used by the block/shortcode) |
+| `name` | varchar(255) | Bundle name |
+| `description` | longtext | Optional description shown on the storefront |
+| `enabled` | tinyint(1) | 1 = published, 0 = hidden |
+| `use_quantity` | tinyint(1) | 1 = quantity steppers, 0 = checkbox selection |
+| `max_quantity` | int | Maximum units allowed per product |
+| `discount_tiers` | longtext | JSON array: `[{"quantity": 2, "discount": 10}, …]` |
+| `product_ids` | longtext | JSON array of WooCommerce product IDs in the bundle |
+| `heading_text` | varchar(255) | Storefront heading above the product grid |
+| `hint_text` | varchar(255) | Helper line under the heading |
+| `primary_color` | varchar(7) | Hex color — progress gradient start |
+| `accent_color` | varchar(7) | Hex color — borders, prices, pills, button |
+| `hover_bg_color` | varchar(7) | Hex color — selected-card tint |
+| `hover_accent_color` | varchar(7) | Hex color — button hover, gradient end |
+| `button_text_color` | varchar(7) | Hex color — text on accent surfaces |
+| `button_text` | varchar(255) | Add-to-cart button label |
+| `progress_text` | varchar(255) | Savings-progress section title |
+| `cart_behavior` | varchar(20) | `sidecart` or `redirect` |
+| `show_bundle_title` | tinyint(1) | Show the bundle name |
+| `show_bundle_description` | tinyint(1) | Show the description |
+| `show_heading_text` | tinyint(1) | Show the storefront heading |
+| `show_hint_text` | tinyint(1) | Show the hint line |
+| `show_progress_text` | tinyint(1) | Show the savings-progress block |
+| `created_at` / `updated_at` | datetime | Timestamps |
+
+### Stored elsewhere
+
+| Location | Key / pattern | Purpose |
+|---|---|---|
+| `wp_options` | `bundlecraft_settings` | Plugin settings (logging, default cart behavior, coupon lifetime) |
+| `wp_options` | `bundlecraft_db_version` | Schema version for `dbDelta()` upgrades |
+| `wp_options` | `bundlecraft_legacy_migrated` | One-time flag for legacy data migration |
+| `wp_posts` | `shop_coupon` posts titled `bundlecraft_bundle_*` | Dynamic discount coupons — expire after the configured lifetime; unused ones are deleted by a daily cron |
+| Cart item meta | `bundlecraft_bundle_item`, `bundlecraft_bundle_id` | Marks cart lines that belong to a bundle |
+| WC session | `bundlecraft_bundle_discount` | Active bundle discount + coupon code for the current shopper |
+
+Uninstalling removes all of the above (table, options, and unused bundle coupons).
+
 ## Repository layout
 
 ```
