@@ -511,15 +511,16 @@ onMounted( loadBundles );
 					<!-- -------- Discounts tab -------- -->
 					<section v-else-if="activeTab === 'discounts'" class="bc-editor-section">
 						<div class="bc-editor-row">
-							<div class="bc-field bc-field--check">
-								<label>
-									<input v-model="form.use_quantity" type="checkbox" />
-									{{ t( 'useQuantity', 'Use quantity mode (steppers instead of checkboxes)' ) }}
-								</label>
+							<div class="bc-switch-row bc-switch-row--inline">
+								<div>
+									<span class="bc-switch-row__label">{{ t( 'useQuantity', 'Quantity mode' ) }}</span>
+									<p class="bc-switch-row__hint">{{ t( 'useQuantityHint', 'Steppers per product instead of a single checkbox.' ) }}</p>
+								</div>
+								<Switch v-model="form.use_quantity" :label="t( 'useQuantity', 'Use quantity mode (steppers instead of checkboxes)' )" />
 							</div>
 							<div class="bc-field bc-field--inline">
 								<label for="bc-max-qty">{{ t( 'maxQuantity', 'Max quantity' ) }}</label>
-								<input id="bc-max-qty" v-model.number="form.max_quantity" type="number" min="1" max="999" />
+								<input id="bc-max-qty" v-model.number="form.max_quantity" type="number" min="1" max="999" :disabled="! form.use_quantity" />
 							</div>
 						</div>
 
@@ -549,37 +550,56 @@ onMounted( loadBundles );
 
 					<!-- -------- Design tab -------- -->
 					<section v-else-if="activeTab === 'design'" class="bc-editor-section">
-						<div class="bc-field">
-							<label for="bc-heading">{{ t( 'headingText', 'Heading text' ) }}</label>
-							<input id="bc-heading" v-model="form.heading_text" type="text" />
-							<label class="bc-inline-check">
-								<input v-model="form.show_heading_text" type="checkbox" />
-								{{ t( 'showHeading', 'Show heading' ) }}
-							</label>
+						<div class="bc-design-card">
+							<div class="bc-design-card__head">
+								<label for="bc-heading">{{ t( 'headingText', 'Heading text' ) }}</label>
+								<Switch v-model="form.show_heading_text" :label="t( 'showHeading', 'Show heading' )" />
+							</div>
+							<input
+								id="bc-heading"
+								v-model="form.heading_text"
+								type="text"
+								:disabled="! form.show_heading_text"
+							/>
 						</div>
-						<div class="bc-field">
-							<label for="bc-hint">{{ t( 'hintText', 'Hint text' ) }}</label>
-							<input id="bc-hint" v-model="form.hint_text" type="text" />
-							<label class="bc-inline-check">
-								<input v-model="form.show_hint_text" type="checkbox" />
-								{{ t( 'showHint', 'Show hint' ) }}
-							</label>
+
+						<div class="bc-design-card">
+							<div class="bc-design-card__head">
+								<label for="bc-hint">{{ t( 'hintText', 'Hint text' ) }}</label>
+								<Switch v-model="form.show_hint_text" :label="t( 'showHint', 'Show hint' )" />
+							</div>
+							<input
+								id="bc-hint"
+								v-model="form.hint_text"
+								type="text"
+								:disabled="! form.show_hint_text"
+							/>
 						</div>
-						<div class="bc-field">
-							<label for="bc-progress">{{ t( 'progressText', 'Progress section text' ) }}</label>
-							<input id="bc-progress" v-model="form.progress_text" type="text" />
-							<label class="bc-inline-check">
-								<input v-model="form.show_progress_text" type="checkbox" />
-								{{ t( 'showProgress', 'Show progress' ) }}
-							</label>
+
+						<div class="bc-design-card">
+							<div class="bc-design-card__head">
+								<label for="bc-progress">{{ t( 'progressText', 'Progress section text' ) }}</label>
+								<Switch v-model="form.show_progress_text" :label="t( 'showProgress', 'Show progress' )" />
+							</div>
+							<input
+								id="bc-progress"
+								v-model="form.progress_text"
+								type="text"
+								:disabled="! form.show_progress_text"
+							/>
 						</div>
-						<div class="bc-field">
-							<label for="bc-button-text">{{ t( 'buttonText', 'Button text' ) }}</label>
+
+						<div class="bc-design-card">
+							<div class="bc-design-card__head">
+								<label for="bc-button-text">{{ t( 'buttonText', 'Button text' ) }}</label>
+							</div>
 							<input id="bc-button-text" v-model="form.button_text" type="text" />
 						</div>
 
-						<div class="bc-field">
-							<label>{{ t( 'colorsLabel', 'Colors' ) }}</label>
+						<div class="bc-design-card">
+							<div class="bc-design-card__head">
+								<span class="bc-design-card__label">{{ t( 'colorsLabel', 'Colors' ) }}</span>
+							</div>
 							<div class="bc-swatches">
 								<label
 									v-for="[key, labelKey, fallback] in [
@@ -598,8 +618,10 @@ onMounted( loadBundles );
 							</div>
 						</div>
 
-						<div class="bc-field">
-							<label>{{ t( 'cartBehavior', 'After adding to cart' ) }}</label>
+						<div class="bc-design-card">
+							<div class="bc-design-card__head">
+								<span class="bc-design-card__label">{{ t( 'cartBehavior', 'After adding to cart' ) }}</span>
+							</div>
 							<div class="bc-segmented bc-segmented--wide" role="radiogroup" :aria-label="t( 'cartBehavior', 'After adding to cart' )">
 								<button
 									type="button"
@@ -623,15 +645,21 @@ onMounted( loadBundles );
 							</div>
 						</div>
 
-						<div class="bc-field bc-field--check bc-field--stack">
-							<label>
-								<input v-model="form.show_bundle_title" type="checkbox" />
-								{{ t( 'showTitle', 'Show title' ) }}
-							</label>
-							<label>
-								<input v-model="form.show_bundle_description" type="checkbox" />
-								{{ t( 'showOnStorefront', 'Show on storefront' ) }}
-							</label>
+						<div class="bc-switch-rows">
+							<div class="bc-switch-row">
+								<div>
+									<span class="bc-switch-row__label">{{ t( 'showTitle', 'Show title' ) }}</span>
+									<p class="bc-switch-row__hint">{{ t( 'showTitleHint', 'Display the bundle name above the widget.' ) }}</p>
+								</div>
+								<Switch v-model="form.show_bundle_title" :label="t( 'showTitle', 'Show title' )" />
+							</div>
+							<div class="bc-switch-row">
+								<div>
+									<span class="bc-switch-row__label">{{ t( 'showOnStorefront', 'Show on storefront' ) }}</span>
+									<p class="bc-switch-row__hint">{{ t( 'showStorefrontHint', 'The bundle description, shown under the title.' ) }}</p>
+								</div>
+								<Switch v-model="form.show_bundle_description" :label="t( 'showOnStorefront', 'Show on storefront' )" />
+							</div>
 						</div>
 					</section>
 				</div>

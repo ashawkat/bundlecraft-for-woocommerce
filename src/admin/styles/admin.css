@@ -477,6 +477,96 @@
 	animation: bc-fade-up 0.25s ease both;
 }
 
+/* Design cards: labeled field blocks with an inline visibility switch */
+
+.bc-design-card {
+	border: 1px solid #e2e4e7;
+	border-radius: 10px;
+	padding: 13px 16px;
+	margin-bottom: 12px;
+	background: #fff;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bc-design-card:focus-within {
+	border-color: #4caf50;
+	box-shadow: 0 0 0 1px rgba(76, 175, 80, 0.25);
+}
+
+.bc-design-card__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 9px;
+}
+
+.bc-design-card__head > label,
+.bc-design-card__label {
+	font-weight: 600;
+	font-size: 13px;
+	margin: 0;
+}
+
+.bc-design-card input[type="text"] {
+	margin: 0;
+	width: 100%;
+	max-width: none;
+	transition: opacity 0.15s ease;
+}
+
+.bc-design-card input[type="text"]:disabled {
+	background: #f6f7f7;
+	color: #a7aaad;
+	text-decoration: line-through;
+	text-decoration-color: #c3c4c7;
+}
+
+/* Switch rows */
+
+.bc-switch-rows {
+	border: 1px solid #e2e4e7;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.bc-switch-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding: 13px 16px;
+	background: #fff;
+}
+
+.bc-switch-row + .bc-switch-row {
+	border-top: 1px solid #f0f0f1;
+}
+
+.bc-switch-row--inline {
+	flex: 1;
+	min-width: 240px;
+	border: 1px solid #e2e4e7;
+	border-radius: 10px;
+	margin-bottom: 14px;
+}
+
+.bc-switch-row__label {
+	font-weight: 600;
+	font-size: 13px;
+}
+
+.bc-switch-row__hint {
+	margin: 2px 0 0;
+	color: #646970;
+	font-size: 12px;
+}
+
+.bc-switch-row .bc-field--inline input:disabled {
+	background: #f6f7f7;
+	color: #a7aaad;
+}
+
 .bc-editor-row {
 	display: flex;
 	align-items: flex-end;
