@@ -1,7 +1,7 @@
 <script setup>
 import { computed, onMounted, reactive, ref } from 'vue';
 import { apiDelete, apiGet, apiPost } from '../api';
-import { t } from '../config';
+import config, { t } from '../config';
 import Modal from '../components/Modal.vue';
 import { notify, notifyError } from '../toast';
 
@@ -47,7 +47,7 @@ function defaultForm() {
 		hover_bg_color: '#388e3c',
 		hover_accent_color: '#2e7d32',
 		button_text_color: '#ffffff',
-		cart_behavior: 'sidecart',
+		cart_behavior: config.settings?.default_cart_behavior || 'sidecart',
 		show_bundle_title: true,
 		show_bundle_description: true,
 		show_heading_text: true,

@@ -171,6 +171,7 @@ class Plugin {
 				'page'       => $this->current_admin_page(),
 				'dateFormat' => get_option( 'date_format' ),
 				'currency'   => $this->currency_config(),
+				'settings'   => Settings::get(),
 				'i18n'       => $this->admin_i18n(),
 			]
 		);
@@ -511,6 +512,24 @@ class Plugin {
 			'settingsSaved'     => __( 'Settings saved.', 'bundlecraft-for-woocommerce' ),
 			'enableLogging'     => __( 'Enable debug logging', 'bundlecraft-for-woocommerce' ),
 			'loggingHint'       => __( 'When enabled, BundleCraft writes diagnostic messages to the WooCommerce log (WooCommerce → Status → Logs, source "bundlecraft-for-woocommerce"). Leave this off on production stores unless support asks you to enable it.', 'bundlecraft-for-woocommerce' ),
+			'settingsHero'      => __( 'Tune how BundleCraft behaves on your store. Changes save instantly.', 'bundlecraft-for-woocommerce' ),
+			'stateSaved'        => __( 'All changes saved', 'bundlecraft-for-woocommerce' ),
+			'stateSaving'       => __( 'Saving…', 'bundlecraft-for-woocommerce' ),
+			'stateUnsaved'      => __( 'Unsaved changes', 'bundlecraft-for-woocommerce' ),
+			'generalGroup'      => __( 'General', 'bundlecraft-for-woocommerce' ),
+			'cartGroup'         => __( 'Cart & discounts', 'bundlecraft-for-woocommerce' ),
+			'defaultBehavior'   => __( 'Default cart behavior', 'bundlecraft-for-woocommerce' ),
+			'defaultBehaviorHint' => __( 'Preselected for every new bundle you create. You can still change it per bundle in the editor.', 'bundlecraft-for-woocommerce' ),
+			'couponLifetime'    => __( 'Coupon lifetime', 'bundlecraft-for-woocommerce' ),
+			'couponLifetimeHint' => __( 'How long a bundle discount coupon stays valid before it is automatically cleaned up. Longer windows leave more unused coupons behind.', 'bundlecraft-for-woocommerce' ),
+			'debugLogging'      => __( 'Debug logging', 'bundlecraft-for-woocommerce' ),
+			'loggingHintShort'  => __( 'Write diagnostic messages to the WooCommerce log while troubleshooting.', 'bundlecraft-for-woocommerce' ),
+			'lifetime24'        => __( '24 hours', 'bundlecraft-for-woocommerce' ),
+			'lifetime48'        => __( '48 hours', 'bundlecraft-for-woocommerce' ),
+			'lifetime72'        => __( '3 days', 'bundlecraft-for-woocommerce' ),
+			'lifetime168'       => __( '1 week', 'bundlecraft-for-woocommerce' ),
+			'openSidecart'      => __( 'Open cart / sidecart', 'bundlecraft-for-woocommerce' ),
+			'redirectToCart'    => __( 'Redirect to cart', 'bundlecraft-for-woocommerce' ),
 
 			// Diagnostics view.
 			'environment'       => __( 'Environment', 'bundlecraft-for-woocommerce' ),

@@ -212,7 +212,7 @@ class Cart {
 			$coupon->set_exclude_sale_items( false );
 			$coupon->set_minimum_amount( 0 );
 			$coupon->set_maximum_amount( '' );
-			$coupon->set_date_expires( time() + DAY_IN_SECONDS );
+			$coupon->set_date_expires( time() + Settings::coupon_lifetime_hours() * HOUR_IN_SECONDS );
 
 			if ( ! empty( $product_ids ) ) {
 				$coupon->set_product_ids( array_map( 'absint', $product_ids ) );
@@ -586,8 +586,8 @@ class Cart {
 	// ------------------------------------------------------------------
 
 	/**
-	 * Deletes unused bundle coupons older than 24 hours. Used coupons are
-	 * kept for order history and analytics.
+	 * Deletes unused bundle coupons past their configured lifetime. Used
+	 * coupons are kept for order history and analytics.
 	 *
 	 * @return array{deleted:int, kept:int}
 	 */
@@ -629,8 +629,9 @@ class Cart {
 				}
 
 				$created = (int) get_post_time( 'U', true, $coupon_post->ID );
+				$lifetime = Settings::coupon_lifetime_hours() * HOUR_IN_SECONDS;
 
-				if ( $created && ( current_time( 'timestamp' ) - $created ) < DAY_IN_SECONDS ) {
+				if ( $created && ( current_time( 'timestamp' ) - $created ) < $lifetime ) {
 					continue;
 				}
 

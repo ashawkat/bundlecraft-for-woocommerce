@@ -176,10 +176,25 @@ class Rest {
 					'callback'            => [ $this, 'save_settings' ],
 					'permission_callback' => [ $this, 'can_manage' ],
 					'args'                => [
-						'enable_logging' => [
+						'enable_logging'        => [
 							'type'              => 'boolean',
-							'required'          => true,
+							'required'          => false,
+							'default'           => false,
 							'sanitize_callback' => 'rest_sanitize_boolean',
+						],
+						'default_cart_behavior' => [
+							'type'              => 'string',
+							'required'          => false,
+							'default'           => 'sidecart',
+							'enum'              => [ 'sidecart', 'redirect' ],
+							'sanitize_callback' => 'sanitize_key',
+						],
+						'coupon_lifetime_hours' => [
+							'type'              => 'integer',
+							'required'          => false,
+							'default'           => 24,
+							'enum'              => [ 24, 48, 72, 168 ],
+							'sanitize_callback' => 'absint',
 						],
 					],
 				],
@@ -441,7 +456,9 @@ class Rest {
 	public function save_settings( $request ) {
 		Settings::update(
 			[
-				'enable_logging' => (bool) $request['enable_logging'],
+				'enable_logging'        => rest_sanitize_boolean( $request['enable_logging'] ),
+				'default_cart_behavior' => $request['default_cart_behavior'],
+				'coupon_lifetime_hours' => absint( $request['coupon_lifetime_hours'] ),
 			]
 		);
 
