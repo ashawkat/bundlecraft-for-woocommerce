@@ -1,0 +1,15 @@
+# Files excluded from the distribution archive.
+.git
+.github
+node_modules
+scripts
+src
+package.json
+package-lock.json
+vite.config.js
+.distignore
+.gitignore
+README.md
+CHANGELOG.md
+*.log
+.DS_Store

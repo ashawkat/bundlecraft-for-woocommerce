@@ -1,0 +1,20 @@
+{
+	"name": "bundlecraft-for-woocommerce",
+	"private": true,
+	"version": "1.0.0",
+	"description": "Build scripts for BundleCraft for WooCommerce (Vue 3 admin app and storefront widget).",
+	"license": "GPL-2.0-or-later",
+	"type": "module",
+	"scripts": {
+		"dev": "node scripts/build.mjs --watch",
+		"build": "node scripts/build.mjs"
+	},
+	"dependencies": {
+		"chart.js": "^4.5.0",
+		"vue": "^3.5.13"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.2.1",
+		"vite": "^6.0.7"
+	}
+}
