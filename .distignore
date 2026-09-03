@@ -1,6 +1,7 @@
 # Files excluded from the distribution archive.
 .git
 .github
+.wordpress-org
 node_modules
 scripts
 src

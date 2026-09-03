@@ -1,8 +1,11 @@
 # BundleCraft for WooCommerce
 
+![BundleCraft for WooCommerce](.wordpress-org/banner-1544x500.png)
+
 Build product bundle promotions with tiered quantity discounts, a modern Vue-powered admin, analytics, and a customer-facing bundle builder widget.
 
 - **Contributors:** ashawkat
+- **Author:** Betatech
 - **Requires:** WordPress 6.0+, WooCommerce 7.0+, PHP 7.4+
 - **License:** GPL-2.0-or-later
 
@@ -33,6 +36,9 @@ templates/bundle-display.php      Widget shell (payload + mount point)
 src/                              Vue 3 sources (admin app, storefront widget)
 scripts/build.mjs                 Vite build (two standalone IIFE bundles + CSS)
 assets/build/                     Compiled bundles (committed, used by the plugin)
+assets/fonts/                     Google Sans Flex (OFL) + license
+assets/img/                       Admin menu icon
+.wordpress-org/                   WordPress.org directory assets: banners, icon, logo SVG
 languages/                        Translations (bundlecraft-for-woocommerce.pot)
 ```
 
