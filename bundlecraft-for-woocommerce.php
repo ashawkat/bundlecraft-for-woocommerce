@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BundleCraft for WooCommerce
  * Plugin URI: https://github.com/ashawkat/bundlecraft-for-woocommerce
- * Description: Build product bundle promotions with tiered quantity discounts, a modern admin app, analytics, and a customer-facing bundle builder widget.
+ * Description: Build product bundle promotions with tiered quantity discounts — Gutenberg block, shortcode, Vue-powered admin, analytics, and a customer-facing bundle builder widget.
  * Version: 1.0.0
  * Requires at least: 6.0
  * Requires PHP: 7.4

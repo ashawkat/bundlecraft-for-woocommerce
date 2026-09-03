@@ -11,12 +11,15 @@ Build product bundle promotions with tiered quantity discounts, a modern Vue-pow
 
 ## Features
 
-- Bundle editor with product search, drag-and-drop ordering, tiered quantity discounts, text/color controls, and a live preview.
-- Storefront widget (`[bundlecraft_bundle id="…"]`) with variation support, quantity steppers or select mode, discount progress, summary, and mobile sticky cart.
+- Bundle editor admin app (Vue 3) with product search, drag-and-drop ordering, tiered quantity discounts, text/color controls, and a live preview.
+- **Gutenberg block** (`bundlecraft/bundle`) with an in-editor preview and automatic shortcode → block conversion, plus the classic `[bundlecraft_bundle id="…"]` shortcode.
+- Storefront widget: variation support, quantity steppers or select mode, tier progress, summary, and a mobile sticky cart.
 - Server-authoritative pricing: the browser never computes discounts. Quotes and cart additions go through the WordPress REST API, and the discount is applied as a real WooCommerce coupon.
 - Analytics dashboard (coupon usage, revenue over time, cart share, top bundles) with date-range filtering.
 - Diagnostics page and optional WooCommerce debug logging.
 - Automatic migration from the legacy "mmb" table of the author's earlier bundle plugin.
+
+> **Roadmap:** first-class widgets for Elementor, Bricks, and other page builders are coming soon.
 
 ## Repository layout
 

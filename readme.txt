@@ -14,6 +14,8 @@ Build product bundle promotions with tiered quantity discounts, a modern admin a
 
 BundleCraft lets you group products into attractive bundle promotions. Shoppers pick products (or set quantities), watch their savings grow as they reach discount tiers, and add the whole bundle to the cart in one click. Discounts are applied with real WooCommerce coupons, so totals are correct in every cart, sidecart, and checkout view.
 
+Place bundles anywhere with the **native Gutenberg block** (with an in-editor preview and automatic shortcode conversion) or the classic `[bundlecraft_bundle id="123"]` shortcode.
+
 **Highlights**
 
 * Tiered quantity discounts: "Buy 2+ get 10% off, 3+ get 15% off…" with a live progress bar for shoppers.
@@ -22,10 +24,14 @@ BundleCraft lets you group products into attractive bundle promotions. Shoppers 
 * Product search with drag-and-drop ordering for bundle contents.
 * Variable products supported: shoppers choose variations inside the widget.
 * Cart behavior per bundle: open the cart/sidecart or redirect to the cart page.
-* Shortcode `[bundlecraft_bundle id="123"]` works in posts, pages, and page builders.
+* Gutenberg block and shortcode placement, in posts, pages, and block-based widget areas.
 * Analytics dashboard: coupons created, bundle revenue, orders, cart share, and top bundles over time.
 * Health-check diagnostics page and optional WooCommerce debug logging.
 * Built with Vue 3 and the WordPress REST API; all pricing math runs server-side.
+
+**Coming soon**
+
+First-class widgets for Elementor, Bricks, and other page builders are on the roadmap.
 
 **Discounts that stay correct**
 
@@ -47,6 +53,10 @@ BundleCraft does not send data to any third-party service. All processing happen
 = How are the discounts calculated? =
 
 Server-side, always. When a shopper changes their selection the widget asks the store for a fresh quote; when the bundle is added to the cart the exact same calculation runs again and a matching WooCommerce coupon is applied. The browser never decides the discount.
+
+= How do I place a bundle on a page? =
+
+Two ways: insert the **BundleCraft Bundle** block in the Gutenberg editor (it shows an in-editor preview), or use the classic shortcode `[bundlecraft_bundle id="123"]`. Pasting the shortcode into the block editor converts it into the block automatically.
 
 = Does it work with variable products? =
 
