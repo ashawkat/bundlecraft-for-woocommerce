@@ -6,8 +6,8 @@
  * Version: 1.0.0
  * Requires at least: 6.0
  * Requires PHP: 7.4
- * Author: BundleCraft
- * Author URI: https://github.com/ashawkat
+ * Author: Betatech
+ * Author URI: https://betatech.co
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: bundlecraft-for-woocommerce
